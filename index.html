@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konverter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<style>
+    *,html, body{
+        padding: 0;
+        margin: 0;
+        font-family: poppins;
+    }
+
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+
+    .container{        
+        width: 1000px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: grey;
+    }
+
+    .judul{
+        margin-bottom: 96px;
+        background-color: #CD3333;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .input{
+        display: flex;
+    }
+
+    .panjang{
+        margin-right: 72px;
+        font-size: 2em;
+        font-weight: 600;
+    }
+
+    #panjang{
+        width: 324px;
+        height: 64px;
+    }
+
+    .lebar{
+        font-size: 2em;
+        font-weight: 600;
+    }
+
+    #lebar{
+        width: 324px;
+        height: 64px;
+    }
+
+    .output{
+        display: flex;
+        justify-content: spac;
+    }
+
+    .satuan{
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .are{
+        margin-right: 48px;
+    }
+
+    .hasil{
+        margin-top: 96px;
+        font-size: 2em;
+        font-weight: 600;
+    }
+
+    #hasil{
+        margin-right: 48px;
+        width: 324px;
+        height: 64px;
+    }
+
+    .are{
+        color: black;
+        font-size: 48px;
+        font-weight: 600;
+        background-color: white;
+        width: 150px;
+        height: 64px;
+        display: flex;
+        justify-content: center; 
+        align-items: center;    
+        text-align: center;
+    }
+    
+    .m2{
+        color: black;
+        font-size: 48px;
+        font-weight: 600;
+        background-color: white;
+        width: 150px;
+        height: 64px;
+        display: flex;
+        justify-content: center; 
+        align-items: center;    
+        text-align: center;
+    }
+
+</style>
+<body>
+    <div class="container">
+        <div class="judul">
+            <h1>KONVERSI LUAS SEGI EMPAT</h1>
+        </div>
+        <div class="input">
+            <div class="panjang">
+                <p>Panjang (m)</p>
+                <input type="number" name="panjang" id="panjang">
+            </div>
+            <div class="lebar">
+                <p>Lebar (m)</p>
+                <input type="number" name="lebar" id="lebar">
+            </div>
+        </div>
+        <div class="output">
+            <div class="hasil">
+                <p>Hasil</p>
+                <input type="number" name="hasil" id="hasil" readonly>
+            </div>
+            <div class="satuan">
+                <div class="are">
+                    <a onclick="hitungAre()" id="are">Are</a>
+                </div>
+                <div class="m2">
+                    <a onclick="hitungM2()" id="m2">M<sup>2</sup></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        are = document.getElementById("are");
+        m2 = document.getElementById("m2");
+    </script>
+</body>
+</html>
