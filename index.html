@@ -52,6 +52,7 @@
     #panjang{
         width: 324px;
         height: 64px;
+        font-size: 40px;
     }
 
     .lebar{
@@ -62,6 +63,7 @@
     #lebar{
         width: 324px;
         height: 64px;
+        font-size: 40px;
     }
 
     .output{
@@ -88,6 +90,7 @@
         margin-right: 48px;
         width: 324px;
         height: 64px;
+        font-size: 40px;
     }
 
     .are{
@@ -116,6 +119,21 @@
         text-align: center;
     }
 
+    button {
+        color: black;
+        font-size: 48px;
+        font-weight: 600;
+        background-color: white;
+        width: 150px;
+        height: 64px;
+        display: flex;
+        justify-content: center; 
+        align-items: center;    
+        text-align: center;
+        border: none;
+        cursor: pointer;
+    }
+
 </style>
 <body>
     <div class="container">
@@ -135,22 +153,47 @@
         <div class="output">
             <div class="hasil">
                 <p>Hasil</p>
-                <input type="number" name="hasil" id="hasil" readonly>
+                <input type="text" name="hasil" id="hasil" readonly>
             </div>
             <div class="satuan">
                 <div class="are">
-                    <a onclick="hitungAre()" id="are">Are</a>
+                    <button onclick="hitungAre()" id="are">Are</button>
                 </div>
                 <div class="m2">
-                    <a onclick="hitungM2()" id="m2">M<sup>2</sup></a>
+                    <button onclick="hitungM2()" id="m2">M<sup>2</sup></button>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-        are = document.getElementById("are");
-        m2 = document.getElementById("m2");
+        let luas;
+        function hitungAre(){
+            const panjang = document.getElementById("panjang").value;
+            const lebar = document.getElementById("lebar").value;
+            const hasil = document.getElementById("hasil");
+
+            if(panjang === "" || lebar === "" || isNaN(panjang) || isNaN(lebar)){
+                hasil.value = 0;
+            }else{
+                const luas = parseFloat(panjang) * parseFloat(lebar); 
+                hasil.value = luas / 100; 
+                console.log(luas / 100);
+            }
+        }
+
+        function hitungM2(){
+            const panjang = document.getElementById("panjang").value;
+            const lebar = document.getElementById("lebar").value;
+            const hasil = document.getElementById("hasil");
+            
+            if(panjang === "" || lebar === "" || isNaN(panjang) || isNaN(lebar)){
+                hasil.value = 0;
+            }else{
+                const luas = parseFloat(panjang) * parseFloat(lebar); 
+                hasil.value = luas;
+            }
+        }
     </script>
 </body>
 </html>
