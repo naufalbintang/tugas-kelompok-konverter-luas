@@ -1,122 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Konverter</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
-  <style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Konverter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+    <style>
     *, html, body {
-      padding: 0;
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
+        padding: 0;
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
     }
 
     body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
     }
 
     .container {
-      width: 100% ;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background-color: #15202B;
+        width: 100% ;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #15202B;
     }
 
     .judul {
-      margin-bottom: 24px;
-      scale: 150%;
-      background-color: #CD3333;
-      padding: 0 15px;
-      box-shadow: 15px 15px 0px 0px #000000;
+        margin-bottom: 24px;
+        scale: 150%;
+        background-color: #CD3333;
+        padding: 0 15px;
+        box-shadow: 15px 15px 0px 0px #000000;
     }
 
     .input-section,
     .output-section {
-      display: flex;
-      margin-top: 48px;
+        display: flex;
+        margin-top: 48px;
     }
 
     .luas-input,
     .luas-output {
-      font-size: 2em;
-      font-weight: 600;
+        font-size: 2em;
+        font-weight: 600;
     }
 
     input[type="text"],
     input[type="number"] {
-      margin-right: 48px;
-      width: 324px;
-      height: 64px;
-      font-size: 40px;
-      box-shadow: 15px 15px 0px 0px #000000;
-      text-align: center;
+        margin-right: 48px;
+        width: 324px;
+        height: 64px;
+        font-size: 40px;
+        box-shadow: 15px 15px 0px 0px #000000;
+        text-align: center;
     }
 
     .satuan {
-      display: flex;
-      align-items: flex-end;
+        display: flex;
+        align-items: flex-end;
     }
 
     .are,
     .m2 {
-      color: black;
-      font-size: 48px;
-      font-weight: 600;
-      background-color: white;
-      width: 150px;
-      height: 64px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      box-shadow: 15px 15px 0px 0px #000000;
-      margin-right: 24px;
+        color: black;
+        font-size: 48px;
+        font-weight: 600;
+        background-color: white;
+        width: 150px;
+        height: 64px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        box-shadow: 15px 15px 0px 0px #000000;
+        margin-right: 24px;
     }
 
     button {
-      background: none;
-      border: none;
-      color: inherit;
-      font: inherit;
-      cursor: pointer;
-      width: 100%;
-      height: 100%;
+        background: none;
+        border: none;
+        color: inherit;
+        font: inherit;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
     }
 
     button:hover {
-      background-color: #CD3333;
-      color: white;
+        background-color: #CD3333;
+        color: white;
     }
-  </style>
+    </style>
 </head>
 <body>
-  <div class="container">
+    <div class="container">
     <div class="judul">
-      <h1>KONVERSI LUAS ARE & M<sup>2</sup></h1>
+        <h1>KONVERSI LUAS ARE & M<sup>2</sup></h1>
     </div>
 
     <div class="input-section">
-      <div class="luas-input">
+        <div class="luas-input">
         <p>Luas</p>
         <input type="number" id="inputLuas">
-      </div>
-      <div class="satuan">
+    </div>
+    <div class="satuan">
         <div class="are">
-          <button onclick="hitungAre()">are</button>
+            <button onclick="hitungAre()">are</button>
         </div>
         <div class="m2">
-          <button onclick="hitungM2()">m<sup>2</sup></button>
+            <button onclick="hitungM2()">m<sup>2</sup></button>
         </div>
-      </div>
+        </div>
     </div>
 
     <div class="output-section">
