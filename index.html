@@ -37,6 +37,11 @@
         background-color: #CD3333;
         padding-left: 15px;
         padding-right: 15px;
+        box-shadow: 15px 15px 0px 0px #000000;
+    }
+
+    .menu{
+        display: flex;
     }
 
     .input{
@@ -53,6 +58,8 @@
         width: 324px;
         height: 64px;
         font-size: 40px;
+        box-shadow: 15px 15px 0px 0px #000000;
+        text-align: center;
     }
 
     .lebar{
@@ -64,11 +71,26 @@
         width: 324px;
         height: 64px;
         font-size: 40px;
+        box-shadow: 15px 15px 0px 0px #000000;
+        text-align: center;
+    }
+
+    .luas{
+        margin-top: 96px;
+        font-size: 2em;
+        font-weight: 600;
+    }
+
+    #luas{
+        width: 324px;
+        height: 64px;
+        font-size: 40px;
+        box-shadow: 15px 15px 0px 0px #000000;
+        text-align: center;
     }
 
     .output{
         display: flex;
-        justify-content: spac;
     }
 
     .satuan{
@@ -91,6 +113,8 @@
         width: 324px;
         height: 64px;
         font-size: 40px;
+        box-shadow: 15px 15px 0px 0px #000000;
+        text-align: center;
     }
 
     .are{
@@ -104,6 +128,7 @@
         justify-content: center; 
         align-items: center;    
         text-align: center;
+        box-shadow: 15px 15px 0px 0px #000000;
     }
     
     .m2{
@@ -117,6 +142,7 @@
         justify-content: center; 
         align-items: center;    
         text-align: center;
+        box-shadow: 15px 15px 0px 0px #000000;
     }
 
     button {
@@ -134,12 +160,18 @@
         cursor: pointer;
     }
 
+    button:hover{
+        background-color: #CD3333;
+        color: white;
+    }
+
 </style>
 <body>
     <div class="container">
         <div class="judul">
             <h1>KONVERSI LUAS SEGI EMPAT</h1>
         </div>
+
         <div class="input">
             <div class="panjang">
                 <p>Panjang (m)</p>
@@ -150,6 +182,10 @@
                 <input type="number" name="lebar" id="lebar">
             </div>
         </div>
+        <div class="luas">
+            <p>Luas (m<sup>2</sup>)</p>
+            <input type="number" name="luas" id="luas">
+        </div>
         <div class="output">
             <div class="hasil">
                 <p>Hasil</p>
@@ -157,31 +193,34 @@
             </div>
             <div class="satuan">
                 <div class="are">
-                    <button onclick="hitungAre()" id="are">Are</button>
+                    <button onclick="hitungAre()" id="are">are</button>
                 </div>
                 <div class="m2">
-                    <button onclick="hitungM2()" id="m2">M<sup>2</sup></button>
+                    <button onclick="hitungM2()" id="m2">m<sup>2</sup></button>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
+        const area = document.getElementById("luas");
+        const hasil = document.getElementById("hasil");
+        const panjang = document.getElementById("panjang");
+        const lebar = document.getElementById("lebar");
         let luas;
-        function hitungAre(){
-            const panjang = document.getElementById("panjang").value;
-            const lebar = document.getElementById("lebar").value;
-            const hasil = document.getElementById("hasil");
 
-            if(panjang === "" || lebar === "" || isNaN(panjang) || isNaN(lebar)){
+        
+
+        function hitungAre(){
+            if(panjang.value === "" || lebar.value === "" || isNaN(panjang.value) || isNaN(lebar.value)){
                 hasil.value = 0;
             }else{
-                const luas = parseFloat(panjang) * parseFloat(lebar); 
-                hasil.value = luas / 100; 
-                console.log(luas / 100);
+                luas = parseFloat(panjang.value) * parseFloat(lebar.value);
+                area.value = luas;
+                hasil.value = luas / 100;
             }
         }
-
+    
         function hitungM2(){
             const panjang = document.getElementById("panjang").value;
             const lebar = document.getElementById("lebar").value;
@@ -190,10 +229,12 @@
             if(panjang === "" || lebar === "" || isNaN(panjang) || isNaN(lebar)){
                 hasil.value = 0;
             }else{
-                const luas = parseFloat(panjang) * parseFloat(lebar); 
+                luas = parseFloat(panjang) * parseFloat(lebar); 
+                area.value = luas;
                 hasil.value = luas;
             }
         }
+        
     </script>
-</body>
-</html>
+    </body>
+    </html>
