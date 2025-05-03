@@ -1,240 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Konverter</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-</head>
-<style>
-    *,html, body{
-        padding: 0;
-        margin: 0;
-        font-family: poppins;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Konverter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, html, body {
+      padding: 0;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
     }
 
-    body{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
     }
 
-    .container{        
-        width: 1000px;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: grey;
+    .container {
+      width: 100% ;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #15202B;
     }
 
-    .judul{
-        margin-bottom: 96px;
-        background-color: #CD3333;
-        padding-left: 15px;
-        padding-right: 15px;
-        box-shadow: 15px 15px 0px 0px #000000;
+    .judul {
+      margin-bottom: 24px;
+      scale: 150%;
+      background-color: #CD3333;
+      padding: 0 15px;
+      box-shadow: 15px 15px 0px 0px #000000;
     }
 
-    .menu{
-        display: flex;
+    .input-section,
+    .output-section {
+      display: flex;
+      margin-top: 48px;
     }
 
-    .input{
-        display: flex;
+    .luas-input,
+    .luas-output {
+      font-size: 2em;
+      font-weight: 600;
     }
 
-    .panjang{
-        margin-right: 72px;
-        font-size: 2em;
-        font-weight: 600;
+    input[type="text"],
+    input[type="number"] {
+      margin-right: 48px;
+      width: 324px;
+      height: 64px;
+      font-size: 40px;
+      box-shadow: 15px 15px 0px 0px #000000;
+      text-align: center;
     }
 
-    #panjang{
-        width: 324px;
-        height: 64px;
-        font-size: 40px;
-        box-shadow: 15px 15px 0px 0px #000000;
-        text-align: center;
+    .satuan {
+      display: flex;
+      align-items: flex-end;
     }
 
-    .lebar{
-        font-size: 2em;
-        font-weight: 600;
-    }
-
-    #lebar{
-        width: 324px;
-        height: 64px;
-        font-size: 40px;
-        box-shadow: 15px 15px 0px 0px #000000;
-        text-align: center;
-    }
-
-    .luas{
-        margin-top: 96px;
-        font-size: 2em;
-        font-weight: 600;
-    }
-
-    #luas{
-        width: 324px;
-        height: 64px;
-        font-size: 40px;
-        box-shadow: 15px 15px 0px 0px #000000;
-        text-align: center;
-    }
-
-    .output{
-        display: flex;
-    }
-
-    .satuan{
-        display: flex;
-        align-items: flex-end;
-    }
-
-    .are{
-        margin-right: 48px;
-    }
-
-    .hasil{
-        margin-top: 96px;
-        font-size: 2em;
-        font-weight: 600;
-    }
-
-    #hasil{
-        margin-right: 48px;
-        width: 324px;
-        height: 64px;
-        font-size: 40px;
-        box-shadow: 15px 15px 0px 0px #000000;
-        text-align: center;
-    }
-
-    .are{
-        color: black;
-        font-size: 48px;
-        font-weight: 600;
-        background-color: white;
-        width: 150px;
-        height: 64px;
-        display: flex;
-        justify-content: center; 
-        align-items: center;    
-        text-align: center;
-        box-shadow: 15px 15px 0px 0px #000000;
-    }
-    
-    .m2{
-        color: black;
-        font-size: 48px;
-        font-weight: 600;
-        background-color: white;
-        width: 150px;
-        height: 64px;
-        display: flex;
-        justify-content: center; 
-        align-items: center;    
-        text-align: center;
-        box-shadow: 15px 15px 0px 0px #000000;
+    .are,
+    .m2 {
+      color: black;
+      font-size: 48px;
+      font-weight: 600;
+      background-color: white;
+      width: 150px;
+      height: 64px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      box-shadow: 15px 15px 0px 0px #000000;
+      margin-right: 24px;
     }
 
     button {
-        color: black;
-        font-size: 48px;
-        font-weight: 600;
-        background-color: white;
-        width: 150px;
-        height: 64px;
-        display: flex;
-        justify-content: center; 
-        align-items: center;    
-        text-align: center;
-        border: none;
-        cursor: pointer;
+      background: none;
+      border: none;
+      color: inherit;
+      font: inherit;
+      cursor: pointer;
+      width: 100%;
+      height: 100%;
     }
 
-    button:hover{
-        background-color: #CD3333;
-        color: white;
+    button:hover {
+      background-color: #CD3333;
+      color: white;
     }
-
-</style>
+  </style>
+</head>
 <body>
-    <div class="container">
-        <div class="judul">
-            <h1>KONVERSI LUAS SEGI EMPAT</h1>
-        </div>
-
-        <div class="input">
-            <div class="panjang">
-                <p>Panjang (m)</p>
-                <input type="number" name="panjang" id="panjang">
-            </div>
-            <div class="lebar">
-                <p>Lebar (m)</p>
-                <input type="number" name="lebar" id="lebar">
-            </div>
-        </div>
-        <div class="luas">
-            <p>Luas (m<sup>2</sup>)</p>
-            <input type="number" name="luas" id="luas">
-        </div>
-        <div class="output">
-            <div class="hasil">
-                <p>Hasil</p>
-                <input type="text" name="hasil" id="hasil" readonly>
-            </div>
-            <div class="satuan">
-                <div class="are">
-                    <button onclick="hitungAre()" id="are">are</button>
-                </div>
-                <div class="m2">
-                    <button onclick="hitungM2()" id="m2">m<sup>2</sup></button>
-                </div>
-            </div>
-        </div>
+  <div class="container">
+    <div class="judul">
+      <h1>KONVERSI LUAS ARE & M<sup>2</sup></h1>
     </div>
 
-    <script>
-        const area = document.getElementById("luas");
-        const hasil = document.getElementById("hasil");
-        const panjang = document.getElementById("panjang");
-        const lebar = document.getElementById("lebar");
-        let luas;
+    <div class="input-section">
+      <div class="luas-input">
+        <p>Luas</p>
+        <input type="number" id="inputLuas">
+      </div>
+      <div class="satuan">
+        <div class="are">
+          <button onclick="hitungAre()">are</button>
+        </div>
+        <div class="m2">
+          <button onclick="hitungM2()">m<sup>2</sup></button>
+        </div>
+      </div>
+    </div>
 
-        
+    <div class="output-section">
+      <div class="luas-output">
+        <p>Hasil</p>
+        <input type="text" id="outputLuas" readonly>
+      </div>
+      <div class="satuan">
+        <div class="are" style="display: none; background-color: #CD3333; color: white;" id="are">
+          <p>are</p>
+        </div>
+        <div class="m2" style="display: none; background-color: #CD3333; color: white;" id="m2">
+          <p>m<sup>2</sup></p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-        function hitungAre(){
-            if(panjang.value === "" || lebar.value === "" || isNaN(panjang.value) || isNaN(lebar.value)){
-                hasil.value = 0;
-            }else{
-                luas = parseFloat(panjang.value) * parseFloat(lebar.value);
-                area.value = luas;
-                hasil.value = luas / 100;
-            }
-        }
+  <script>
+    const inputLuas = document.getElementById("inputLuas");
+    const outputLuas = document.getElementById("outputLuas");
+    const are = document.getElementById("are");
+    const m2 = document.getElementById("m2");
+
     
-        function hitungM2(){
-            const panjang = document.getElementById("panjang").value;
-            const lebar = document.getElementById("lebar").value;
-            const hasil = document.getElementById("hasil");
-            
-            if(panjang === "" || lebar === "" || isNaN(panjang) || isNaN(lebar)){
-                hasil.value = 0;
-            }else{
-                luas = parseFloat(panjang) * parseFloat(lebar); 
-                area.value = luas;
-                hasil.value = luas;
-            }
-        }
-        
-    </script>
-    </body>
-    </html>
+    function hitungAre(){
+        let luas = inputLuas.value;
+        outputLuas.value = luas * 100;
+        m2.style.display = "block";
+        are.style.display = "none";
+    }
+
+    function hitungM2(){
+        let luas = inputLuas.value;
+        outputLuas.value = luas / 100;
+        m2.style.display = "none";
+        are.style.display = "block";
+    }
+
+
+
+  </script>
+</body>
+</html>
